@@ -1,0 +1,25 @@
+/* styles.css or global.css */
+
+.link-underline {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #9CA3AF; /* Tailwind's hotpink (rose-500) */
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.link-underline:hover::after,
+.link-underline:focus::after {
+  transform: scaleX(1);
+}
