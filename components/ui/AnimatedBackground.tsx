@@ -1,11 +1,16 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
-import { ReactNode } from "react";
+import { useRef, ReactNode } from "react";
 
-// Import dev icons from react-icons
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaGitAlt } from "react-icons/fa";
-import { SiMongodb, SiTailwindcss, SiNextdotjs } from "react-icons/si";
+// Import dev icons
+import {
+  FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs,
+  FaGitAlt, FaJava, FaPython, FaGithub, FaDatabase
+} from "react-icons/fa";
+import {
+  SiMongodb, SiTailwindcss, SiNextdotjs,
+  SiExpress, SiTypescript, SiBootstrap, SiMysql
+} from "react-icons/si";
 
 export default function AnimatedBackground({ children }: { children: ReactNode }) {
   const ref = useRef(null);
@@ -23,55 +28,93 @@ export default function AnimatedBackground({ children }: { children: ReactNode }
 
   return (
     <div className="relative min-h-screen w-full overflow-hidden">
-      {/* Base */}
-      <div className="fixed inset-0 bg-white/95" /> 
-      <div className="fixed inset-0 bg-gradient-to-t from-transparent via-rose-100/10 to-transparent dark:via-rose-200/10" />
-      <div className="fixed inset-0 bg-gradient-to-r from-transparent via-orange-100/10 to-transparent dark:via-orange-200/10" />
+      {/* Base background with blur */}
+      <div className="fixed inset-0 bg-gradient-to-br from-white via-gray-100 to-gray-200 backdrop-blur-lg" />
+      <div className="fixed inset-0 bg-gradient-to-t from-transparent via-gray-200/40 to-transparent" />
+      <div className="fixed inset-0 bg-gradient-to-r from-transparent via-gray-300/30 to-transparent" />
 
       {/* Floating Dev Icons */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden text-red-600/60 dark:text-red-400/60">
-        
-        <motion.div style={{ y: yFast, rotate: rotateFast }} className="absolute top-1/4 left-1/5 text-6xl">
+      <div className="fixed inset-0 pointer-events-none overflow-hidden text-gray-500/70" style={{ filter: 'blur(1px)' }}>
+
+        {/* ✅ Only key icons on mobile, more icons appear from md: breakpoint */}
+
+        {/* Frontend */}
+        <motion.div style={{ y: yFast, rotate: rotateFast }} className="absolute top-20 left-10 text-5xl text-gray-400">
           <FaHtml5 />
         </motion.div>
 
-        <motion.div style={{ y: ySlow, rotate: rotateSlow }} className="absolute bottom-1/3 right-1/4 text-6xl text-blue-600">
+        <motion.div style={{ y: ySlow, rotate: rotateSlow }} className="absolute bottom-32 right-20 text-5xl text-gray-500">
           <FaCss3Alt />
         </motion.div>
 
-        <motion.div style={{ y: yMedium }} className="absolute top-1/3 right-1/3 text-6xl text-yellow-500">
+        <motion.div style={{ y: yMedium }} className="absolute top-40 right-1/4 text-5xl text-gray-600">
           <FaJs />
         </motion.div>
 
-        <motion.div style={{ y: yFast, rotate: rotateSlow }} className="absolute top-1/2 left-1/3 text-6xl text-cyan-500">
+        <motion.div style={{ y: yFast, rotate: rotateSlow }} className="absolute top-1/2 left-1/5 text-5xl text-gray-400">
           <FaReact />
         </motion.div>
 
-        <motion.div style={{ y: ySlower }} className="absolute top-1/5 right-1/6 text-6xl text-green-600">
-          <FaNodeJs />
-        </motion.div>
-
-        <motion.div style={{ y: yMedium, rotate: rotateFast }} className="absolute bottom-1/4 left-1/4 text-6xl text-emerald-600">
-          <SiMongodb />
-        </motion.div>
-
-        <motion.div style={{ y: ySlow }} className="absolute top-2/3 left-1/2 text-6xl text-sky-500">
-          <SiTailwindcss />
-        </motion.div>
-
-        <motion.div style={{ y: yFast }} className="absolute top-1/6 right-1/2 text-6xl text-black dark:text-white">
+        {/* These only show on md+ screens */}
+        <motion.div style={{ y: ySlower }} className="hidden md:block absolute top-1/6 right-1/5 text-5xl text-gray-500">
           <SiNextdotjs />
         </motion.div>
 
-        <motion.div style={{ y: ySlower, rotate: rotateSlow }} className="absolute bottom-1/6 right-1/3 text-6xl text-orange-600">
+        <motion.div style={{ y: yMedium, rotate: rotateFast }} className="block absolute bottom-40 left-1/4 text-5xl text-gray-400">
+          <SiTailwindcss />
+        </motion.div>
+
+        <motion.div style={{ y: ySlow }} className="hidden md:block absolute top-2/3 left-2/3 text-5xl text-gray-600">
+          <SiBootstrap />
+        </motion.div>
+
+        {/* Backend */}
+        <motion.div style={{ y: yFast }} className="hidden md:absolute top-1/5 right-1/3 text-5xl text-gray-500">
+          <FaNodeJs />
+        </motion.div>
+
+        <motion.div style={{ y: ySlower, rotate: rotateSlow }} className="hidden md:block absolute bottom-20 right-1/4 text-5xl text-gray-400">
+          <SiExpress />
+        </motion.div>
+
+        {/* Databases */}
+        <motion.div style={{ y: yMedium, rotate: rotateSlow }} className="absolute top-2/5 left-1/3 text-5xl text-gray-600">
+          <SiMongodb />
+        </motion.div>
+
+        <motion.div style={{ y: ySlow }} className="block absolute bottom-28 left-1/2 text-5xl text-gray-500">
+          <SiMysql />
+        </motion.div>
+
+        <motion.div style={{ y: yFast }} className="block absolute bottom-1/2 right-1/6 text-5xl text-gray-400">
+          <FaDatabase />
+        </motion.div>
+
+        {/* Version Control */}
+        <motion.div style={{ y: yMedium }} className="hidden md:block absolute top-1/2 right-1/5 text-5xl text-gray-600">
           <FaGitAlt />
+        </motion.div>
+
+        <motion.div style={{ y: ySlower }} className="hidden md:block absolute top-1/4 left-1/6 text-5xl text-gray-500">
+          <FaGithub />
+        </motion.div>
+
+        {/* Other Skills */}
+        <motion.div style={{ y: ySlow, rotate: rotateFast }} className="hidden md:block absolute top-1/3 right-1/2 text-5xl text-gray-400">
+          <SiTypescript />
+        </motion.div>
+
+        <motion.div style={{ y: yMedium }} className="hidden md:block absolute bottom-1/3 left-1/4 text-5xl text-gray-500">
+          <FaJava />
+        </motion.div>
+
+        <motion.div style={{ y: yFast, rotate: rotateSlow }} className="hidden md:block absolute bottom-1/6 left-1/3 text-5xl text-gray-600">
+          <FaPython />
         </motion.div>
       </div>
 
       {/* Content area */}
-      <div className="relative z-10">
-        {children}
-      </div>
+      <div className="relative z-10">{children}</div>
     </div>
   );
 }
