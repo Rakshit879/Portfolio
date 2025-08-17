@@ -1,6 +1,7 @@
+import About from "@/components/sections/About";
+import Education from "@/components/sections/Education";
 import Hero from "@/components/sections/Hero";
 import Navbar from "@/components/ui/Navbar";
-import Image from "next/image";
 
 export default function Home() {
   return (
@@ -8,6 +9,8 @@ export default function Home() {
     <main className="w-full h-max">
       <Navbar/>
       <Hero/>
+      <About/>
+      <Education/>
     </main>
   );
 }

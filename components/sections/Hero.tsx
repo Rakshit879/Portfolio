@@ -7,7 +7,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Hero() {
   return (
-    <section className="mt-22 md:mt-12 relative min-h-screen flex items-center justify-center px-6 md:px-12 lg:px-20 ">
+    <section id="home" className="mt-22 md:mt-12 relative min-h-screen flex items-center justify-center px-6 md:px-12 lg:px-20 ">
       <div className="max-w-7xl w-full flex flex-col md:flex-row items-center md:items-center justify-between gap-12">
         
         {/* Left Content */}
@@ -19,18 +19,18 @@ export default function Hero() {
         >
           <h1 className="text-4xl md:text-5xl font-extrabold leading-tight text-center md:text-start text-gray-900">
             Hi, I’m{" "}
-            <span className="text-red-700"> {/* deep red for name */}
+            <span className="text-neutral-950"> {/* deep red for name */}
               Rakshit Garg
             </span>
             <br />
-            <span className="text-2xl text-orange-600"> {/* warm orange-red for roles */}
+            <span className="text-2xl text-neutral-700"> {/* warm orange-red for roles */}
               <Typewriter
                 options={{
                   strings: [
                     "Full Stack Developer",
                     "MERN Stack Specialist",
                     "Data Science Enthusiast",
-                    "Hackathon Innovator",
+                    "Software Engineer",
                   ],
                   autoStart: true,
                   loop: true,
@@ -46,7 +46,7 @@ export default function Hero() {
             Let’s build something amazing together.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-6">
+          <div className="mt-8 flex flex-wrap  gap-6">
             {/* GitHub Button */}
             <Link
               href="https://github.com/Rakshit879"
@@ -80,12 +80,11 @@ export default function Hero() {
         >
           <div className="relative w-64 h-64 md:w-80 md:h-80">
             <Image
-              src="/profile.jpg" // Replace with your image
+              src="/Images/profile.jpg" // Replace with your image
               alt="Profile"
               fill
-              className="rounded-full object-cover border-4 border-red-600 shadow-xl"
+              className="rounded-full object-cover border-4 border-gray-600 shadow-xl"
             />
-            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-red-500/20 to-orange-400/20 blur-xl animate-pulse"></div>
           </div>
         </motion.div>
 
