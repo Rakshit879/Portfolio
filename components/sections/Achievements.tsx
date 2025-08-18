@@ -25,7 +25,7 @@ export default function Achievements() {
           transition={{ duration: 0.6 }}
           className="text-3xl md:text-5xl font-extrabold text-center text-neutral-800"
         >
-          Achievements <span className="text-red-500">& Certifications</span>
+           <span className="text-red-500">Achievements</span>
         </motion.h2>
 
         <motion.div
