@@ -32,7 +32,7 @@ export default function Contact() {
         className="bg-white rounded-3xl shadow-2xl p-10 max-w-md w-full border border-gray-200 hover:shadow-2xl hover:scale-102 transition-transform duration-300"
       >
         <p className="text-center text-gray-700 mb-10">
-          I'm always open to discussing new projects, opportunities, or collaborations. Feel free to reach out!
+          I&aposm always open to discussing new projects, opportunities, or collaborations. Feel free to reach out!
         </p>
 
         {/* Contact Info */}
