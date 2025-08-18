@@ -2,11 +2,12 @@
 
 import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import projects from "../../data/projectsData";
+import project from "../../data/projectsData";
 
 export default function Projects() {
   return (
-    <section id="projects" className="px-6 md:px-12 lg:px-20 py-16">
+    
+    <section id="project" className="px-6 md:px-12 lg:px-20 py-16">
       {/* Heading */}
       <div className="text-center mb-12">
         <h2 className="text-4xl font-extrabold text-neutral-800">🚀 Projects</h2>
@@ -27,7 +28,7 @@ export default function Projects() {
 
       {/* Projects List */}
       <div className="space-y-8 max-w-4xl mx-auto ">
-        {projects.map((project, index) => (
+        {project.map((project, index) => (
           <motion.div
             key={index}
             className="p-6 border border-gray-700 rounded-xl bg-black/40 backdrop-blur-md shadow-lg shadow-gray-400 hover:shadow-orange-500/20 transition"

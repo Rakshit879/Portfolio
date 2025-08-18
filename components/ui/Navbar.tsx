@@ -21,7 +21,7 @@ export default function Navbar() {
           }
         });
       },
-      { threshold: 0.6 } // Trigger when 60% of section is visible
+      { threshold: 0.2 } // Trigger when 60% of section is visible
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -34,9 +34,9 @@ export default function Navbar() {
   const navLinks = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
-    { name: "Projects", href: "#projects" },
+    { name: "Projects", href: "#project" },
     { name: "Achievements", href: "#achievements" },
-    { name: "Contact", href: "#contact" },
+    { name: "Contact", href: "#Contact" },
   ];
 
   return (
@@ -99,9 +99,8 @@ export default function Navbar() {
 
         <div className="relative group">
           <Link
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/Rakshit_Garg_resume.pdf"
+            download
             className="text-white hover:text-gray-400 transition"
           >
             <FaFileAlt size={22} />
@@ -149,7 +148,7 @@ export default function Navbar() {
             <div className="flex gap-6 mt-6">
               <Link href="https://github.com/Rakshit879" target="_blank"><FaGithub size={22} /></Link>
               <Link href="https://www.linkedin.com/in/rakshit-garg-768b2724b/" target="_blank"><FaLinkedin size={22} /></Link>
-              <Link href="/resume.pdf" target="_blank"><FaFileAlt size={22} /></Link>
+              <Link href="/Rakshit_Garg_resume.pdf" download><FaFileAlt size={22} /></Link>
             </div>
           </div>
         </div>
